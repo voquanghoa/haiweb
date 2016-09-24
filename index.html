@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" >
 	<head>
 		<meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,23 +8,28 @@
         <meta name="author" content="">
         <base href="/edsa-hai/">
 		
+		
 		<script src="node_modules/angular/angular.min.js"></script>
 		<script src="node_modules/angular-route/angular-route.js"></script>
 		<script src="node_modules/angular-resource/angular-resource.js"></script>
 		
-		
 	</head>
-	<body ng-app="haiApp">
-
-		<div ng-view />
-
+	<body ng-app="haiApp" >
 		
-		<script type="text/javascript" src="controller.js"></script>
+		<div ng-controller="MainController">
+		</div>
+
+		<ng-view></ng-view>
+		
+		<script type="text/javascript" src="app.js"></script>
+		
+		<script type="text/javascript" src="main/main_controller.js"></script>
+		<script type="text/javascript" src="main/main_service.js"></script>
+		<script type="text/javascript" src="main/main_module.js"></script>
 		
 		<script type="text/javascript" src="login/login_controller.js"></script>
 		<script type="text/javascript" src="login/login_service.js"></script>
 		<script type="text/javascript" src="login/login_module.js"></script>
 		
-		<script type="text/javascript" src="app.js"></script>
 	</body>
 </html>
