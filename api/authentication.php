@@ -10,7 +10,7 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
 	
 	if ($user != 'admin' || $password != '123'){
 		header('HTTP/1.0 401 Unauthorized');
-		echo 'Wrong username or password';
+		echo 'Wrong username', $user,' or password ',$password;
 		exit;
 	}
 	

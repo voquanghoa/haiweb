@@ -10,10 +10,14 @@
 		
 		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/jumbotron-narrow.css">
+		<link rel="stylesheet" href="css/login.css">
+		<link rel="stylesheet" href="css/style.css">
 
 		<script src="node_modules/jquery/dist/jquery.min.js"></script>
 		<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 		
+		<script src="js/webtoolkit.base64.js"></script>
 		<script src="node_modules/angular/angular.min.js"></script>
 		<script src="node_modules/angular-route/angular-route.js"></script>
 		<script src="node_modules/angular-resource/angular-resource.js"></script>
@@ -21,11 +25,25 @@
 	</head>
 	<body ng-app="haiApp" >
 		
+		<div class="container">
+		  <div class="header clearfix">
+			<nav>
+			  <ul class="nav nav-pills pull-right">
+				<li role="presentation" class="active"><a>Home</a></li>
+				<li role="presentation"><a href="#">About</a></li>
+				
+				<li role="presentation" ng-controller="LogoutController">
+					<a ng-click="logout()">Logout</a>
+				</li>
+			  </ul>
+			</nav>
+			<h3 class="text-muted">Upload ảnh, video hài</h3>
+		  </div>
 		<div ng-controller="MainController">
+			
 		</div>
-
 		<ng-view></ng-view>
-		
+		</div>
 		<script type="text/javascript" src="app.js"></script>
 		
 		<script type="text/javascript" src="main/main_controller.js"></script>
