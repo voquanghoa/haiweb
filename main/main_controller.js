@@ -10,10 +10,19 @@
 			}
 			$scope.message = '';
 			$scope.messageClass="alert-success";
+			$scope.showUpload = false;
 			$scope.post = {
 				title: "",
 				url: ""
 			};
+			
+			$scope.showUrlInput = function(){
+				$scope.showUpload = false;
+			};
+			
+			$scope.showUploadFile= function(){
+				$scope.showUpload = true;
+			}
 			
 			$scope.submit = function(){
 				$q.all([

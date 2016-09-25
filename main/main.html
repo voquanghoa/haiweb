@@ -5,29 +5,50 @@
 	</div>
 	<form class="form-horizontal">
 		<div class="form-group">
-		  <span class="control-label col-sm-2"></span>
-		  <div class="col-sm-10">
+		  <div class="col-sm-10 col-sm-offset-2">
 			<h2>Thêm bài viết</h2>
-		  </div>
-		</div>
-		<div class="form-group">
-		  <label class="control-label col-sm-2" for="title">Tiêu đề:</label>
-		  <div class="col-sm-10">
-			<input ng-model="post.title" type="text" class="form-control" id="title" placeholder="Tiêu đề">
 		  </div>
 		</div>
 		
 		<div class="form-group">
+		  <label class="control-label col-sm-2" for="title">Tiêu đề:</label>
+		  <div class="col-sm-10">
+			<input ng-model="post.title" type="text" class="form-control" id="title" placeholder="Tiêu đề" autocomplete="off">
+		  </div>
+		</div>
+		
+		<div class="form-group">
+		  <div class="col-sm-10 col-sm-offset-2">
+			<button ng-class="{'btn-success' : showUpload}" ng-click="showUrlInput()" class="btn">Thêm đường dẫn</button>
+			<button ng-class="{'btn-success' : !showUpload}" ng-click="showUploadFile()" class="btn">Upload file</button>
+		  </div>
+		</div>
+		
+		<div class="form-group" ng-show="!showUpload">
 		  <label class="control-label col-sm-2" for="url">Đường dẫn:</label>
 		  <div class="col-sm-10">
-			<input ng-model="post.url" type="text" class="form-control" id="url" placeholder="http://">
+			<input ng-model="post.url" type="text" class="form-control" id="url" placeholder="http://" autocomplete="off">
 		  </div>
 		</div>
 
-		<div class="form-group">
-		  <div class="col-sm-offset-2 col-sm-10">
-			<button ng-click="submit()" class="btn btn-primary">Thêm bài viết</button>
+		<div class="form-group" ng-show="showUpload">
+		  <label class="control-label col-sm-2" for="file">Upload file:</label>
+		  <div class="col-sm-10">
+			<input type="file" class="form-control" id="file" placeholder="http://" >
 		  </div>
 		</div>
+		
+		<div class="form-group" ng-show="showUpload">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button class="btn btn-default">Upload</button>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button ng-click="submit()" class="btn btn-primary">Thêm bài viết</button>
+			</div>
+		</div>
+		
 	</form>
 </div>
