@@ -22,6 +22,7 @@
     "angular-route": "^1.5.8",
     "base-64": "^0.1.0",
     "bootstrap": "^3.3.7",
-    "jquery": "^3.1.1"
+    "jquery": "^3.1.1",
+    "propel": "^2.1.1"
   }
 }

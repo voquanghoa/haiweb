@@ -9,6 +9,14 @@
 	
 	as.run(function ($rootScope, $http, $route, $location) {
 		
+		$rootScope.$on('$routeChangeStart', function (event) {
+            if (!$rootScope.authenticated()) {            
+                $rootScope.$broadcast('event:loginRequired');
+            } else if (!!$rootScope.authenticated()) {
+                $location.path('/home');
+            }
+        });
+		
 		$rootScope.$on('event:loginConfirmed', function () {
             $location.path('/home');
         });

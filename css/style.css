@@ -1,3 +1,9 @@
 a{
 	cursor:pointer;
 }
+
+.post-form{
+	border: solid 2px #90DBF8;
+    background: #F6FFFD;
+    padding: 10px;
+}

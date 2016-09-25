@@ -29,11 +29,14 @@
 		  <div class="header clearfix">
 			<nav>
 			  <ul class="nav nav-pills pull-right">
-				<li role="presentation" class="active"><a>Home</a></li>
-				<li role="presentation"><a href="#">About</a></li>
+				<li ng-show="authenticated()" role="presentation" class="active"><a href="#/main">Home</a></li>
 				
-				<li role="presentation" ng-controller="LogoutController">
+				<li ng-show="authenticated()" role="presentation" ng-controller="LogoutController">
 					<a ng-click="logout()">Logout</a>
+				</li>
+				
+				<li ng-show="!authenticated()" role="presentation" class="active">
+					<a href="#/login">Login</a>
 				</li>
 			  </ul>
 			</nav>
