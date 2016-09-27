@@ -29,7 +29,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-        <button type="button" class="btn btn-primary" ng-click="selectFile()">Chọn file</button>
+        <button type="button" ng-disabled="selectedIndex<0" class="btn btn-primary" ng-click="selectFile()">Chọn file</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
