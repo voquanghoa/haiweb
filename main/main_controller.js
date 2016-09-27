@@ -36,7 +36,7 @@
 						url: ""
 					};
 				}, function(data){
-					$scope.message = 'Có lỗi khi thêm bài viết.' + data;
+					$scope.message = 'Có lỗi khi thêm bài viết.' + data.data;
 					$scope.messageClass="alert-warning";
 				});
 			};
