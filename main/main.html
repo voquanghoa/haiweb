@@ -17,12 +17,7 @@
 		  </div>
 		</div>
 		
-		<div class="form-group">
-		  <div class="col-sm-10 col-sm-offset-2">
-			<button ng-class="{'btn-success' : showUpload}" ng-click="showUrlInput()" class="btn">Thêm đường dẫn</button>
-			<button ng-class="{'btn-success' : !showUpload}" ng-click="showUploadFile()" class="btn">Upload file</button>
-		  </div>
-		</div>
+		
 		
 		<div class="form-group" ng-show="!showUpload">
 		  <label class="control-label col-sm-2" for="url">Đường dẫn:</label>
@@ -31,6 +26,12 @@
 		  </div>
 		</div>
 
+		<div class="form-group">
+		  <div class="col-sm-10 col-sm-offset-2">
+			<button type="button" class="btn btn-info" data-toggle="modal" data-target="#select-ftp">Chọn file</button>
+		  </div>
+		</div>
+		
 		<div class="form-group" ng-show="showUpload">
 		  <label class="control-label col-sm-2" for="file">Upload file:</label>
 		  <div class="col-sm-10">

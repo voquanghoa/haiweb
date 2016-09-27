@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="css/jumbotron-narrow.css">
 		<link rel="stylesheet" href="css/login.css">
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/select-file.css">
 
 		<script src="node_modules/jquery/dist/jquery.min.js"></script>
 		<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -44,9 +45,15 @@
 			</nav>
 			<h3 class="text-muted">Upload ảnh, video hài</h3>
 		  </div>
+		
 		<div ng-controller="MainController">
 			
 		</div>
+		
+		<div ng-controller="BrowserController">
+			<div ng-include="'browser/browser.html'" ></div>
+		</div>
+
 		<ng-view></ng-view>
 		</div>
 		<script type="text/javascript" src="app.js"></script>
@@ -54,6 +61,10 @@
 		<script type="text/javascript" src="main/main_controller.js"></script>
 		<script type="text/javascript" src="main/main_service.js"></script>
 		<script type="text/javascript" src="main/main_module.js"></script>
+		
+		<script type="text/javascript" src="browser/browser_controller.js"></script>
+		<script type="text/javascript" src="browser/browser_service.js"></script>
+		<script type="text/javascript" src="browser/browser_module.js"></script>
 		
 		<script type="text/javascript" src="login/login_controller.js"></script>
 		<script type="text/javascript" src="login/login_service.js"></script>
