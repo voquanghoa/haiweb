@@ -1,4 +1,3 @@
 <?php
-	include('authen.php');
-	echo 'ok';
+	include_once('authen.php');
 ?>
