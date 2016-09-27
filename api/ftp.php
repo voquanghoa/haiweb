@@ -5,7 +5,11 @@
 	$ftp_server = "54.244.68.78";
 	$ftp_username = "relax";
 	$fpt_password = "Abcd1234";
-	$fpt_path = "/".$_GET['path'];
+	$fpt_path = $_GET['path'];
+	
+	if(strlen($fpt_path) ==0){
+		$fpt_path = '/';
+	}
 	
 	$ftp_conn = ftp_connect($ftp_server) or die("Could not connect to $ftp_server");
 	$login = ftp_login($ftp_conn, $ftp_username, $fpt_password);
@@ -15,6 +19,7 @@
 	}
 
 	$response = [];
+	$items = [];
 	
 	$file_list = ftp_nlist($ftp_conn, ".");
 	
@@ -29,8 +34,11 @@
 			$obj['file'] = true;
 		}
 		
-		array_push($response,(object) $obj);
+		array_push($items,(object) $obj);
 	}
+	
+	$response['items'] = $items;
+	$response['path'] = $fpt_path;
 	
 	echo json_encode($response);
 	

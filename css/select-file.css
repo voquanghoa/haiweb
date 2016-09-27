@@ -17,5 +17,12 @@
 .modal-body .list-group{
 	max-height: 330px;
     overflow-y: scroll;
+	padding-right: 5px;
+}
+
+.downloading{
+	margin: auto;
+	width: 100px;
+	height: 100px;
 }
 

@@ -6,55 +6,30 @@
           <span aria-hidden="true">&times;</span>
         </button>
         <div>
-			    <button type="button" class="btn btn-info">
-				  <span class="glyphicon glyphicon glyphicon-level-up"></span>Thư mục cha
+			    <button ng-disabled="currentPath.length<=1" type="button" class="btn btn-info" ng-click="goUp()">
+				  <span class="glyphicon glyphicon glyphicon-level-up"></span>Up
+				</button>
+				<button type="button" class="btn btn-info" ng-click="refresh()">
+				  <span class="glyphicon glyphicon glyphicon-refresh"></span>Refresh
 				</button>
 				<span class="title">Chọn file</span>
 		</div>
       </div>
       <div class="modal-body">
-		<div class="list-group">
-			<a class="list-group-item pointer">First item</a>
-			<a class="list-group-item pointer">Second item</a>
-			<a class="list-group-item pointer">Third item</a>			
-			<a class="list-group-item pointer">First item</a>
-			<a class="list-group-item pointer">Second item</a>
-			<a class="list-group-item pointer">Third item</a>
-			<a class="list-group-item pointer">First item</a>
-			<a class="list-group-item pointer">Second item</a>
-			<a class="list-group-item pointer">Third item</a>			
-			<a class="list-group-item pointer">First item</a>
-			<a class="list-group-item pointer">Second item</a>
-			<a class="list-group-item pointer">Third item</a>
-			<a class="list-group-item pointer">First item</a>
-			<a class="list-group-item pointer">Second item</a>
-			<a class="list-group-item pointer">Third item</a>			
-			<a class="list-group-item pointer">First item</a>
-			<a class="list-group-item pointer">Second item</a>
-			<a class="list-group-item pointer">Third item</a>
-			<a class="list-group-item pointer">First item</a>
-			<a class="list-group-item pointer">Second item</a>
-			<a class="list-group-item pointer">Third item</a>			
-			<a class="list-group-item pointer">First item</a>
-			<a class="list-group-item pointer">Second item</a>
-			<a class="list-group-item pointer">Third item</a>
-			<a class="list-group-item pointer">First item</a>
-			<a class="list-group-item pointer">Second item</a>
-			<a class="list-group-item pointer">Third item</a>			
-			<a class="list-group-item pointer">First item</a>
-			<a class="list-group-item pointer">Second item</a>
-			<a class="list-group-item pointer">Third item</a>
-			<a class="list-group-item pointer">First item</a>
-			<a class="list-group-item pointer">Second item</a>
-			<a class="list-group-item pointer">Third item</a>			
-			<a class="list-group-item pointer">First item</a>
-			<a class="list-group-item pointer">Second item</a>
-			<a class="list-group-item pointer">Third item</a>
+		<div ng-show="isLoading" class="loading" >
+			<img src="img/downloading.gif">
+			<span>Đang dò</span>
+		</div>
+		<div ng-show="!isLoading && items.length==0"  class="folder-empty">
+			Thư mục rỗng, bấm nút "Up" để quay về thư mục cha
+		</div>
+		<div ng-show="!isLoading" class="list-group">
+			<a ng-repeat="item in items" ng-class="{'active': selectedIndex == $index}" ng-click="onItemSelected($index)" class="list-group-item pointer">{{item.name}}</a>
 		</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
-        <button type="button" class="btn btn-primary">Chọn file</button>
+        <button type="button" class="btn btn-primary" ng-click="selectFile()">Chọn file</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

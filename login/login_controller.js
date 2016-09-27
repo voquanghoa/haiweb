@@ -33,6 +33,10 @@
 			return localStorage.getItem("password");;
 		};
 		
+		if($rootScope.authenticated()){
+			httpHeaders.common['Authorization'] = 'Basic ' + btoa($rootScope.name() + ':' + $rootScope.password());
+        }
+		
 		$rootScope.$on('event:loginRequired', function () {
 			$location.path('/login');
 		});
